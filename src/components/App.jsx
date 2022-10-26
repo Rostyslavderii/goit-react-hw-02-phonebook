@@ -43,6 +43,13 @@ class App extends Component {
       number: number,
       id: nanoid(),
     };
+
+    this.setState(prevState => ({
+      contacts: [
+        newContact,
+        ...prevState.contacts,
+      ] /* (data +good:1, good:2, good:3,) */,
+    }));
   };
 
   render() {

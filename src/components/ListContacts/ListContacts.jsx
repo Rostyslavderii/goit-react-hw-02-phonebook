@@ -5,11 +5,21 @@ import { ItemContacts } from './ItemContacts/ItemContacts';
 export const ListContacts = ({ contacts, filter, userDelete }) => {
   return (
     <ul className={styles.ListContacts}>
-      <ItemContacts
-        contacts={contacts}
-        filter={filter}
-        userDelete={userDelete}
-      />
+      {contacts
+        .filter(contact =>
+          contact.name.toLowerCase().includes(filter.toLowerCase())
+        )
+        .map(user => {
+          return (
+            <ItemContacts
+              contacts={contacts}
+              filter={filter}
+              userDelete={userDelete}
+              user={user}
+              key={user.id}
+            />
+          );
+        })}
     </ul>
   );
 };

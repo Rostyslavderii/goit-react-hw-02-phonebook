@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 class Input extends Component {
   render() {
-    const { handleInput } = this.props; //!!
+    const { handleInput } = this.props;
     console.log(this.props.value);
     console.log('handleInput:', handleInput);
     return (
